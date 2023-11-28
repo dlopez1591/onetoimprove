@@ -50,9 +50,9 @@ public class EmpleadoController {
             existingEmpleado.setNombre(updatedEmpleado.getNombre());
             existingEmpleado.setCargo(updatedEmpleado.getCargo());
             existingEmpleado.setEmail(updatedEmpleado.getEmail());
-            // Actualizas los demás campos según sea necesario
+            existingEmpleado.setFechaFin(updatedEmpleado.getFechaFin());
+            existingEmpleado.setEstadoEmpleado(updatedEmpleado.getEstadoEmpleado());
 
-            // Guardamos el empleado actualizado en la base de datos
             Empleado updated = empleadoRepository.save(existingEmpleado);
 
             return ResponseEntity.ok(updated);

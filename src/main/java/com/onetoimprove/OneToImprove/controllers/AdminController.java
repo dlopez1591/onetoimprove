@@ -53,6 +53,15 @@ public class AdminController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
+    @DeleteMapping("admin/delete/{id}")
+    public ResponseEntity<Void> deleteAdmin (@PathVariable Long id){
+        if(adminRepository.existsById(id)){
+            adminRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
 }

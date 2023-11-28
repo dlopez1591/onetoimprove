@@ -15,7 +15,7 @@ public class SuperAdmin {
     private String nombre;
     private String cargo;
     private String email;
-    private String Password;
+    private String password;
     private String imagen;
 
     public SuperAdmin() {}
@@ -24,7 +24,7 @@ public class SuperAdmin {
         this.nombre = nombre;
         this.cargo = cargo;
         this.email = email;
-        Password = password;
+        this.password = password;
         this.imagen = imagen;
     }
 
@@ -45,7 +45,7 @@ public class SuperAdmin {
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public String getImagen() {
@@ -65,7 +65,7 @@ public class SuperAdmin {
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public void setImagen(String imagen) {

@@ -38,6 +38,21 @@ public class AdminController {
             return new ResponseEntity<>(admin, HttpStatus.BAD_REQUEST);
         }
     }
+    @PostMapping("/admin/update")
+    public ResponseEntity<Admin> updateAdmin(@RequestParam Long id, @RequestBody Admin updatedAdmin) {
+        return adminRepository.findById(id)
+                .map(existingAdmin -> {
+                    existingAdmin.setNombre(updatedAdmin.getNombre());
+                    existingAdmin.setCargo(updatedAdmin.getCargo());
+                    existingAdmin.setEmail(updatedAdmin.getEmail());
+                    existingAdmin.setPassword(updatedAdmin.getPassword());
+                    existingAdmin.setImagen(updatedAdmin.getImagen());
+
+                    Admin updated = adminRepository.save(existingAdmin);
+                    return ResponseEntity.ok().body(updated);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
 
 
 }

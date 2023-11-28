@@ -1,6 +1,7 @@
 package com.onetoimprove.OneToImprove.DTOs;
 
 import com.onetoimprove.OneToImprove.models.Empleado;
+import com.onetoimprove.OneToImprove.models.EstadoEmpleado;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ public class EmpleadoDTO {
     private String imagen;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
+    private EstadoEmpleado estadoEmpleado;
 
     public EmpleadoDTO (Empleado empleado){
         this.id = empleado.getId();
@@ -23,6 +25,7 @@ public class EmpleadoDTO {
         this.imagen = empleado.getImagen();
         this.fechaInicio = empleado.getFechaInicio();
         this.fechaFin = empleado.getFechaFin();
+        this.estadoEmpleado = empleado.getEstadoEmpleado();
     }
 
     public long getId() {
@@ -57,6 +60,10 @@ public class EmpleadoDTO {
         return fechaFin;
     }
 
+    public EstadoEmpleado getEstadoEmpleado() {
+        return estadoEmpleado;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -87,5 +94,9 @@ public class EmpleadoDTO {
 
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public void setEstadoEmpleado(EstadoEmpleado estadoEmpleado) {
+        this.estadoEmpleado = estadoEmpleado;
     }
 }

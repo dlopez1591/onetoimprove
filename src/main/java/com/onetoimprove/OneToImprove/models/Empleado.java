@@ -21,10 +21,11 @@ public class Empleado {
     private String imagen;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
+    private EstadoEmpleado estadoEmpleado;
 
     public Empleado() {}
 
-    public Empleado(String nombre, String cargo, String email, String password, String imagen, LocalDate fechaInicio, LocalDate fechaFin) {
+    public Empleado(String nombre, String cargo, String email, String password, String imagen, LocalDate fechaInicio, LocalDate fechaFin, EstadoEmpleado estadoEmpleado) {
         this.nombre = nombre;
         this.cargo = cargo;
         this.email = email;
@@ -32,6 +33,7 @@ public class Empleado {
         this.imagen = imagen;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.estadoEmpleado = estadoEmpleado;
     }
 
     public long getId() {
@@ -66,6 +68,10 @@ public class Empleado {
         return fechaFin;
     }
 
+    public EstadoEmpleado getEstadoEmpleado() {
+        return estadoEmpleado;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -92,5 +98,9 @@ public class Empleado {
 
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    public void setEstadoEmpleado(EstadoEmpleado estadoEmpleado) {
+        this.estadoEmpleado = estadoEmpleado;
     }
 }

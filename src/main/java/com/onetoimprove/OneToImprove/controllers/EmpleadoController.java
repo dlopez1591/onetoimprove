@@ -1,14 +1,15 @@
 package com.onetoimprove.OneToImprove.controllers;
 
 import com.onetoimprove.OneToImprove.DTOs.EmpleadoDTO;
+import com.onetoimprove.OneToImprove.models.Empleado;
 import com.onetoimprove.OneToImprove.repositories.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -29,4 +30,35 @@ public class EmpleadoController {
         return empleadoRepository.findById(id).map(empleado -> new EmpleadoDTO(empleado)).orElse(null);
     }
 
+    @PostMapping("empleado/create")
+    public ResponseEntity<Empleado> createEmpleado(@RequestBody Empleado empleado){
+        if(empleado !=null){
+            empleadoRepository.save(empleado);
+            return new ResponseEntity<>(empleado, HttpStatus.CREATED);
+        }
+        else {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+    @PostMapping("/empleado/update")
+    public ResponseEntity<Empleado> updateEmpleado(@RequestBody Empleado updatedEmpleado) {
+        Optional<Empleado> empleadoUpdate = empleadoRepository.findById(updatedEmpleado.getId());
+
+        if (empleadoUpdate.isPresent()) {
+            // El empleado existe, actualizamos sus datos
+            Empleado existingEmpleado = empleadoUpdate.get();
+            existingEmpleado.setNombre(updatedEmpleado.getNombre());
+            existingEmpleado.setCargo(updatedEmpleado.getCargo());
+            existingEmpleado.setEmail(updatedEmpleado.getEmail());
+            // Actualizas los demás campos según sea necesario
+
+            // Guardamos el empleado actualizado en la base de datos
+            Empleado updated = empleadoRepository.save(existingEmpleado);
+
+            return ResponseEntity.ok(updated);
+        } else {
+            // El empleado no existe
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

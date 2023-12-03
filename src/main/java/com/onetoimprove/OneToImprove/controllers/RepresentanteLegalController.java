@@ -63,4 +63,5 @@ public class RepresentanteLegalController {
             return ResponseEntity.notFound().build();
         }
    }
+
 }

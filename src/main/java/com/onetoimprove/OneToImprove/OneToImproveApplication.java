@@ -19,7 +19,7 @@ public class OneToImproveApplication {
 	@Bean
 	public CommandLineRunner initData(SuperAdminRepository superAdminRepository, AdminRepository adminRepository) {
 		return (args) -> {
-			SuperAdmin adminPrincipal = new SuperAdmin("Daniel Lopez", "Team Lead", "daniel.lopez@onetoimprove.com", "testing123","imagen.png");
+			SuperAdmin adminPrincipal = new SuperAdmin("Daniel Lopez", "Team Lead", "daniel.lopez@onetoimprove.com", "testing123","./assets/images/danielLopez.jpg");
 
 			Admin admin = new Admin("Micaela Flax", "CEO", "micaela.flax@onetoimprove.com","testing123","imagen.jpg");
 			superAdminRepository.save(adminPrincipal);

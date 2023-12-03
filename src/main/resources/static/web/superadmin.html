@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consola Administrador</title>
+    <link rel="stylesheet" href="./assets/styles/superadmin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+<body>
+    <div id="app">
+        <nav id="sideBar">
+            <div id="perfil">
+                <img :src="usuario.imagen" alt="">
+                <h1 id="nombrePerfil">{{ usuario.nombre }}</h1>
+                <h2 id="cargo">{{ usuario.cargo }}</h2>
+            </div>
+            <div>
+
+            </div>
+        </nav>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./assets/scripts/superadmin.js"></script>
+
+</body>
+</html>

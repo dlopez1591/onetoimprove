@@ -13,3 +13,60 @@ body{
     display: flex;
     flex-direction: row;
 }
+#sideBar{
+    width: 330px;
+    height: 100vh;
+    background-color: #00429D;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#perfil{
+    width: 310px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imagenUsuario{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border-color: #FFD700;
+    border-style: solid;
+    border-width: 2px;
+}
+#nombrePerfil{
+    color: #FFD700;
+    font-size: 40px;
+    margin-top: 10px;
+}
+#cargo{
+    color: #FFD700;
+    font-size: 30px;
+}
+#menu{
+    width: 310px;
+    height: 500px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+.contenedorLink{
+    width: 310px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.activeLink{
+    text-decoration: none;
+    font-size: 40px;
+    margin: 10px;
+    color: #4CAF50;
+}

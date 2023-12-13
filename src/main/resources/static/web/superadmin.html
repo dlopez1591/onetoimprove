@@ -12,14 +12,77 @@
     <div id="app">
         <nav id="sideBar">
             <div id="perfil">
-                <img :src="usuario.imagen" alt="">
+                <img :src="usuario.imagen" alt="Imagen Usuario" class="imagenUsuario">
                 <h1 id="nombrePerfil">{{ usuario.nombre }}</h1>
                 <h2 id="cargo">{{ usuario.cargo }}</h2>
             </div>
+            <div id="menu">
+                <div class="contenedorLink">
+                        <i class="material-symbols-outlined iconosMenu" class="linkActiveMenu"> <a href="./superadmin.html" class="activeLink">home
+                        </i> 
+                    Inicio</a>
+                </div>
+                
+                <a href="./docs.html">
+                    <i class="material-symbols-outlined iconosMenu">
+                        Description
+                    </i>
+                    Documentos
+                </a>
+                <a href="https://mail.hostinger.com/">
+                    <i class="material-symbols-outlined iconosMenu">
+                        Mail
+                    </i>
+                    Mail
+                </a>
+            </div>
             <div>
-
+                <h2 id="crud">CRUD</h2>
+                <a href="./cempleados.html">
+                    <i class="material-symbols-outlined iconosMenu">
+                        Person
+                    </i>
+                    Empleados
+                </a>
+                <a href="./cadmin.html">
+                    <i class="material-symbols-outlined iconosMenu">
+                        support_agent
+                    </i>
+                    Admins
+                </a>
+                <a href="./cnoticias.html">
+                    <i class="material-symbols-outlined iconosMenu">
+                        newspaper
+                    </i>
+                    Noticias
+                </a>
+                <a href="./cusuarios.html">
+                    <i class="material-symbols-outlined iconosMenu">
+                        group
+                    </i>
+                    Usuarios
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <i class="material-symbols-outlined iconosMenu">
+                        logout
+                    </i>
+                    Log Out
+                </a>
             </div>
         </nav>
+        <div id="mainSide">
+            <h1 id="mainTitle">Bienvenid@ al Portal Interno OTI</h1>
+            <div class="noticia">
+                <img src="./assets/images/noticia1.jpg" alt="Imagen Noticia" class="imagenNoticia">
+                    <div class="contenedorTexto">
+                        <p class="textoNoticia">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae asperiores quidem perspiciatis odit velit eveniet, ipsa reprehenderit quia dolorem facilis, nostrum delectus vel vero illum at voluptatibus eligendi ratione modi?
+                        </p>
+                    </div>
+            </div>
+        </div>
 
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
